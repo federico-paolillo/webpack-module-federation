@@ -10,7 +10,7 @@ const configuration: Configuration & DevServerConfiguration = {
   output: {
     clean: true,
     path: path.resolve(__dirname, "dist/"),
-    filename: "[id].[name].[contenthash].js",
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     extensions: [".js", ".ts"],
