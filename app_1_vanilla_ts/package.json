@@ -1,0 +1,26 @@
+{
+  "name": "app_1_vanilla_ts",
+  "version": "1.0.0",
+  "description": "Provider application of a federated module that uses plain old DOM APIs and TypeScript",
+  "main": "src/main.ts",
+  "scripts": {
+    "compile": "tsc --project tsconfig.json",
+    "lint": "eslint src/",
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "author": "federico-paolillo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.6.5",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
