@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "lib": ["DOM", "ES2020"],
-    "module": "ES2020",
+    "module": "ESNext",
     "allowJs": true,
     "checkJs": false,
     "declaration": true,
@@ -18,5 +18,10 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS" //It's just easier and it's just for webpack. https://typestrong.org/ts-node/docs/imports/#native-ecmascript-modules
+    }
+  }
 }

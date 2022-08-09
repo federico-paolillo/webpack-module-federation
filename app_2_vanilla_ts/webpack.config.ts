@@ -1,8 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Webpack = require('webpack');
-const path = require('path');
+import { Configuration } from "webpack";
+import * as Webpack from "webpack";
+import { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
 
-module.exports = {
+const configuration: Configuration & DevServerConfiguration = {
   entry: "./src/main.ts",
   mode: "development",
   output: {
@@ -36,3 +38,5 @@ module.exports = {
     }),
   ],
 };
+
+export default configuration;
