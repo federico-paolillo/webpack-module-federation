@@ -10,6 +10,7 @@ const configuration: Configuration & DevServerConfiguration = {
   output: {
     clean: true,
     path: path.resolve(__dirname, "dist/"),
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     extensions: [".js", ".ts"],
@@ -24,6 +25,11 @@ const configuration: Configuration & DevServerConfiguration = {
   },
   devServer: {
     port: 65535,
+  },
+  optimization: {
+    //Attempting to mess with chunkIds, moduleIds and runtime messes with federation
+    minimize: true,
+    realContentHash: true,
   },
   devtool: "eval-source-map",
   plugins: [
