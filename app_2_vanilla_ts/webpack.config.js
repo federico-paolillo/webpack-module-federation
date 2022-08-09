@@ -3,7 +3,7 @@ const Webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/main.ts",
   mode: "development",
   output: {
     clean: true,
@@ -12,14 +12,14 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts"],
   },
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.ts$/,
-  //       loader: "ts-loader",
-  //     },
-  //   ],
-  // },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+      },
+    ],
+  },
   devServer: {
     port: 65534,
   },
