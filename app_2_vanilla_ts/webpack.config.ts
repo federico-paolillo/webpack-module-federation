@@ -10,6 +10,7 @@ const configuration: Configuration & DevServerConfiguration = {
   output: {
     clean: true,
     path: path.resolve(__dirname, "dist/"),
+    filename: "[id].[name].[contenthash].js",
   },
   resolve: {
     extensions: [".js", ".ts"],
@@ -25,6 +26,13 @@ const configuration: Configuration & DevServerConfiguration = {
   devServer: {
     port: 65534,
   },
+  optimization: {
+    chunkIds: "deterministic",
+    runtimeChunk: "single",
+    moduleIds: "deterministic",
+    minimize: true,
+    realContentHash: true,
+  },
   devtool: "eval-source-map",
   plugins: [
     new Webpack.container.ModuleFederationPlugin({
@@ -35,6 +43,8 @@ const configuration: Configuration & DevServerConfiguration = {
     }),
     new HtmlWebpackPlugin({
       template: "index.html",
+      minify: true,
+      scriptLoading: "blocking",
     }),
   ],
 };
